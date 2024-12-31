@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <form class="login-form">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br>
+    <input type="submit" value="Login">
+  </form>
+  <p id="error-message"></p>
+
+  <script>
+    document.querySelector('.login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      event.preventDefault();
+
+const email = document.getElementById('email').value; // change 'username' to 'email'
+const password = document.getElementById('password').value;
+
+fetch('/users/login', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ email, password }),
+})
+.then(response => {
+  if (!response.ok) {
+    throw new Error('Login failed! Check authentication credentials');
+  }
+  return response.json();
+})
+.then(data => {
+  // Proceed with login
+  console.log(data);
+})
+.catch((error) => {
+  // Display the error message in the UI
+  document.getElementById('error-message').textContent = error.message;
+});
+    });
+  </script>
+</body>
+</html>
