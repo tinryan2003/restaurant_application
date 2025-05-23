@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: ./ngon-master
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+  admin:
+    build:
+      context: ./ngon-admin
+      dockerfile: Dockerfile
+    ports:
+      - "81:80"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./PE
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URL=mongodb://mongodb:27017/ngon_db
+    env_file:
+      - ./PE/.env
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:
