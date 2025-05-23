@@ -69,6 +69,6 @@ adminSchema.statics.findByCredentials = async (email, password) => {
   return { success: true, admin };
 };
 
-const Admin = mongoose.model("Admin", adminSchema);
+const Admin = mongoose.model("Admin",adminSchema);
 
 module.exports = Admin;

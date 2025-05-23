@@ -16,8 +16,8 @@ const sendEmail = async (email, code) => {
     port: 587,
     secure: false,
     auth: {
-      user: 'ngondatabase@gmail.com',
-      pass: 'hphb xgsf iysq vdpv',
+      user: 'tinh7800033@gmail.com',
+      pass: 'ztpb cjcg ntpd deue',
     },
   });
 
