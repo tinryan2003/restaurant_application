@@ -117,13 +117,7 @@ npm start
 
 The React development server will select an available port if the default port is already in use.
 
-## Run with Docker Compose
-
-Docker Compose starts the customer website, admin dashboard, backend, and MongoDB together:
-
-```bash
-docker compose up --build
-```
+## Run the Program
 
 Services:
 
@@ -133,18 +127,6 @@ Services:
 | Admin dashboard | `http://localhost:81` |
 | Backend API | `http://localhost:3000` |
 | MongoDB | `localhost:27017` |
-
-Stop the services with:
-
-```bash
-docker compose down
-```
-
-To remove the persisted MongoDB volume as well:
-
-```bash
-docker compose down -v
-```
 
 ## API route groups
 
