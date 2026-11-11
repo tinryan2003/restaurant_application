@@ -117,9 +117,7 @@ npm start
 
 The React development server will select an available port if the default port is already in use.
 
-## Run the Program
-
-Services:
+## Services:
 
 | Service | URL / port |
 |---|---|
