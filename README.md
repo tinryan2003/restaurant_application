@@ -178,14 +178,4 @@ npm run build
 npm test
 ```
 
-## Security notes
 
-- Never commit `.env` files, SMTP passwords, JWT secrets, or database credentials.
-- Use a strong, unique `JWT_KEY` in every deployed environment.
-- Restrict MongoDB network access in production.
-- Configure a production SMTP account and sender address before enabling email delivery.
-- Replace development CORS and HTTP settings with production-safe configuration before deployment.
-
-## License
-
-This project does not currently declare a public open-source license. Add a `LICENSE` file before distributing it under a specific license.
